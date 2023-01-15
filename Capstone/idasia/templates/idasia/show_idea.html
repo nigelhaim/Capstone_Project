@@ -1,0 +1,103 @@
+{% extends "idasia/layout.html" %}
+{% load static %}
+{% block body %}
+
+{% block css %}
+	<link rel="stylesheet" href="{% static 'idasia/show_idea.css' %}">
+{% endblock %}
+
+
+<div class="idea_content">
+	<div class="idea_title">
+		<h1>{{ idea.proj_title }}|</h1>
+		<h1 id="status">{{ idea.proj_status }}</h1>
+	</div>
+	<div class="categories">
+		{% for category in categories %}
+			<h4 class="category">{{ category.category_name }}</h4>
+		{% endfor %}
+	</div>
+	<div class="idea_header">
+		<img src="{{ idea.proj_image }}">
+		<div class="idea_info">
+			<div class="authors">
+				<h3>Created by:</h3>
+				<a href="{% url 'view_profile' idea.proj_author.user.id %}" class="author">{{ idea.proj_author.user }}</a>
+				{% for coAuth in proj_coAuthor %}
+					<h4 class="author">{{ coAuth.user.username }}</h4>
+				{% endfor %}
+			</div>
+			<div class="date">
+				<h3>Date Created:</h3>
+				<h4>{{ idea.dateCreated }}</h4>
+			</div>
+			<div class="location">
+				<h3>Project Location:</h3>
+				<h4>{{ idea.proj_location }}</h4>
+			</div>
+			<div class="cost">
+				<h3>Projected cost:</h3>
+				<h4 style="color:green">${{ idea.proj_cost }}</h4>
+			</div>
+		</div>
+	</div>
+	
+	<h3>Description</h3>
+	{% if idea.proj_author.user.id == user.id %}
+		
+		<div id="edit_description">
+			<textarea id="new_description" name="new_description">{{ idea.proj_content }}</textarea>
+			<button id="description_submit">Submit</button>
+		</div>
+		
+		<p id="project_description">{{ idea.proj_content }}</p>
+		<button id="open_edit_description_button">Edit Description</button>
+		<button id="close_edit_description_button">Close Edit</button>
+	{% else %}
+	<p id="project_description">{{ idea.proj_content }}</p>
+	{% endif %}
+	
+
+	{% if idea.proj_author.user.id == user.id %}
+		<div class="proj_status_update">
+			<select id="update_status" name="update_status" onchange="update_status({{ idea.id }}, this.value)">
+				<option value=0>Update project status</option>
+				<option value="Active">Active</option>
+				<option value="Planning">Planning</option>
+				<option value="On Hold">On Hold</option>
+				<option value="Cancelled">Cancelled</option>
+			</select>
+		</div>
+	{% endif %}
+	<div class="thread">
+		<h1>Threads:</h1>
+		<a href="/NewThread/{{ idea.id }}" id="new_thread_link">Post a Thread</a>
+		<div id="show-threads">
+		</div>
+	</div>
+	{% if idea.proj_author.user.id == user.id %}
+		<a id="close_thread" href="{% url 'close' idea.id %}">Close Project</a>
+	{% endif %}
+</div>
+
+
+<div id="collaborator_list">
+	<h1>Collaborators</h1>
+
+	{% for collab in collaboratos %}
+		<h2 class="collaborator">{{ collab.user.username }}</h2>
+	{% endfor %}
+</div>
+
+{% block script %}
+	{{ request.user.username|json_script:"user_username" }}
+    <script id ="signed_user" type="application/json" style="display: none;">
+        {"user_id" : {{ user.id }}}
+    </script> 
+     <script id ="post_id" type="application/json" style="display: none;">
+        {"post_id" : {{ idea.id }}}
+    </script> 
+    <script src="{% static 'idasia/show_idea.js' %}" style="display: none;">
+    </script>
+{% endblock %}
+{% endblock %}

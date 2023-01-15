@@ -1,0 +1,30 @@
+{% extends "idasia/layout.html" %}
+{% load static %}
+{% block body %}
+{% block css %}
+	<link rel="stylesheet" href="{% static 'idasia/signup.css' %}">
+{% endblock %}
+<center>
+<h2>Sign-up</h2>
+{% if message %}
+	<h3>{{ message }}</h3>
+{% endif %}
+<form action="{% url 'signup' %}" method="POST">
+	{% csrf_token %}
+	<input type="text" name="uname" placeholder="Username">
+	<input type="password" name="pass" placeholder="Password">
+	<input type="password" name="c_pass" placeholder="Confirm Password">
+	<input type="text" name="email" placeholder="Email">
+	<input type="text" name="prof" placeholder="Profession">
+	<select name="educ">
+		<option value = "" disabled>Highest education</option>
+		<option value = "Elementary">Elementary</option>
+		<option value = "Highschool">Highschool</option>
+		<option value = "College">College</option>
+	</select>
+	<input type="number" name="cont" placeholder="Contact number">
+	<textarea placeholder="About me" name="desc" rows="8" cols="16"></textarea>
+	<input type="submit" vlaue="Register">
+</form>
+</center>
+{% endblock %}

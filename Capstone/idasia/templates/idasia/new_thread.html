@@ -1,0 +1,20 @@
+{% extends "idasia/layout.html" %}
+{% load static %}
+{% block body %}
+{% block css %}
+	<link rel="stylesheet" href="{% static 'idasia/newThread.css' %}">
+{% endblock %}
+
+	<h1>Make a thread</h1>
+	<br>
+	<form action="{% url "new_thread" post_id %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		<h2>Username: {{ user.username }}</h2>
+		<h2>Date:</h2><input type="text" name="date_posted" id="form_date"value="{% now "jS F Y" %}" readonly>
+		<h2>Write Comment</h2>
+		<textarea type="text" name="new_thread_content" id="new_thead_content"></textarea>
+		{{ form.file }}
+		<h5 style="color:white">Do not put folders to upload multiples files please use using shift/command/control</h5>
+		<input type="submit" value="Submit Thread" id="submit_thread">
+	</form>
+{% endblock %}

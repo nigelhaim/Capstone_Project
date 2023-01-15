@@ -1,0 +1,263 @@
+h1, h3{
+	color:orangered;
+}
+a{
+	text-decoration: none;
+}
+h2{
+	color: black;
+}
+h4{
+	position: relative;
+	color: white;
+	top:10px;
+}
+img{
+	max-width: 600px;
+	max-height: 350px;
+	border-right: 5px solid white;
+	padding-right: 50px;
+	margin-right: 25px;
+}
+content{
+	display: flex;
+}
+#collaborator_list{
+	right: 0px;
+	background-color: #1f1f1f;
+	float: right;
+	position: fixed;
+	height:100%;
+	top:0px;
+	width: 15%;
+	padding: 20px;
+}
+.idea_content{
+	display: inline-block;
+	margin-bottom: 300px;
+}
+.idea_header{
+	display: flex;
+}
+.idea_title{
+	display: flex;
+	margin-bottom: -50px;
+}
+.authors{
+	display: flex;
+	color: white;
+}
+.author{
+	border: 1px solid orangered;
+	border-radius: 5px;
+	text-align: center;
+	padding: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	top:-1px;
+	text-decoration: none;
+	color: white;
+}
+.author:visited{
+	border: 1px solid orangered;
+	border-radius: 5px;
+	text-align: center;
+	padding: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	top:-1px;
+	text-decoration: none;
+	color: white;
+}
+.date{
+	display: flex;
+}
+.categories{
+	display: flex;
+	margin-bottom: 80px;
+}
+.category{
+	font-size: 24px;
+	margin-right: 10px;
+}
+.location{
+	display: flex;
+}
+.cost{
+	display: flex;
+}
+h2{
+	color: white;
+}
+
+#project_description{
+	font-size: 24px;
+	color: orangered;
+}
+
+input, textarea, select{
+	background-color: transparent;
+	color: white;
+	border: none;
+	border-bottom: 5px solid white;
+	outline: none;
+	font-size: 21px;
+	width: 300px;
+
+}
+ input, textarea{
+ 	width: 95%;
+ 	padding: 10px;
+ }
+#new_description{
+	font-size: 24px;
+}
+
+option{
+	color: orangered;
+	background-color: black;
+}
+.proj_status_update{
+	margin-top: 50px;
+}
+
+#open_edit_description_button{
+	background-color: transparent;
+	color: white;
+	border: 5px solid white;
+	padding: 8px;
+	border-radius: 5px; 
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 10px;
+
+}
+
+#close_edit_description_button{
+	background-color: orangered;
+	color: black;
+	border: 5px solid orangered;
+	padding: 8px;
+	border-radius: 5px; 
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 10px;
+
+}
+
+#description_submit{
+	background-color: orangered;
+	color: black;
+	border: none;
+	padding: 8px;
+	border-radius: 5px; 
+	margin-top: 10px;
+}
+
+#new_thread_link{
+	background-color: orangered;
+	color: black;
+	border: none;
+	padding: 8px;
+	border-radius: 5px; 
+	margin-top: 10px;
+	text-decoration: none;
+	width: 155px;
+	font-size: 21px;
+}
+
+#new_thread_link:visited{
+	background-color: orangered;
+	color: black;
+	border: none;
+	padding: 8px;
+	border-radius: 5px; 
+	margin-top: 10px;
+	text-decoration: none;
+	width: 155wpx;
+	font-size: 21px;
+}
+
+.thread_div{
+	padding: 10px;
+	border: 5px solid orangered;
+	border-radius: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.thread_uname{
+	color: orangered;
+}
+
+.thread_cont{
+	color: white;
+	font-size: 18px;
+}
+.thread_date{
+	color: whitesmoke;
+
+}
+.thread_r_but{
+	color: whitesmoke;
+	background: transparent;
+	border: none;
+	margin-left: 0px;
+}
+
+.thread_file, .thread_file:visited{
+	border: 5px solid white;
+	padding: 5px;
+	border-radius: 5px;
+	color: orangered;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+.open_reply_button{
+	background-color: orangered;
+	color: black;
+	font-size: 21px;
+	font-weight: 500;
+	border-radius: 5px;
+	border: 5px solid orangered;
+}
+.close_reply_button{
+	border-radius: 5px;
+	color: white;
+	background-color: transparent;
+	border: 5px solid orangered;
+	font-size: 21px;
+	font-weight: 500;
+}
+
+.reply_username{
+	color: orangered;
+
+}
+.reply_content{
+	color: white;
+}
+
+#reply{
+	margin-bottom: 10px;
+	margin-top: 30px;
+	border: 5px solid white;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+#reply_submit{
+	font-size: 21px;
+	background-color: orangered;
+	font-weight: 900;
+	color: black;
+	border-radius: 5px;
+}
+#close_thread{
+	color: white;
+	background-color: darkred;
+	padding: 5px;
+	border-radius: 5px;
+	border: 5px solid darkred;
+}

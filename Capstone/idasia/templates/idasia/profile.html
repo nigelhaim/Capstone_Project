@@ -1,0 +1,46 @@
+{% extends "idasia/layout.html" %}
+{% load static %}
+{% block body %}
+<style style="display:None">
+    .profile_info{
+        display: flex;
+    }
+    .profile_info p{
+        margin-left: 5px;
+        position: relative;
+        top: 18px;
+    }
+    p{
+        color: white;
+    }
+</style>
+<h1 class="head">{{ profile.user.username }}</h1>
+
+<div class="profile_info">
+    <h3>Profession: </h3>
+    <p>{{ profile.profession }}</p>
+</div>
+
+<div class="profile_info">
+    <h3>Profession: </h3>
+    <p>{{ profile.Highest_edu_attain }}</p>
+</div>
+
+<h3>About me:</h3>
+<p>{{ profile.description }}</p>
+
+<div class="profile_info">
+    <h3>Contact me: </h3>
+    <p>{{ profile.contact_number }}</p>
+</div>
+<div id="show-ideas">
+</div>
+
+{% block script %}
+    <script id ="profile_user" type="application/json" style="display: none;">
+        {"profile_id" : {{ profile.user.id }}}
+    </script> 
+    <script src="{% static 'idasia/profile_projects.js' %}" style="display: none;">
+    </script>
+{% endblock %}
+{% endblock %}

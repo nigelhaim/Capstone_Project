@@ -1,0 +1,26 @@
+{% extends "idasia/layout.html" %}
+{% load static %}
+{% block body %}
+<h1 class="head">Ideas</h1>
+
+<div class="select-categories">
+    <label>Categories: </label>
+    <select id="select_category" name="category" onchange="changeCategory(this.value)">
+        <option value="all">All ideas</option>
+        {% for cat in categories %}
+            <option value="{{ cat.id }}">{{ cat.category_name }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<div id="show-ideas">
+</div>
+
+{% block script %}
+    <script id ="signed_user" type="application/json" style="color:transparent;">
+        {"user_id" : {{ user.id }}}
+    </script> 
+    <script src="{% static 'idasia/projects.js' %}">
+    </script>
+{% endblock %}
+{% endblock %}

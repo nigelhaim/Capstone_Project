@@ -1,0 +1,91 @@
+*{
+	font-family: consolas;
+	display: block;
+}
+body{
+	background-color: #121212;
+	max-height: 100%;
+	display: block;
+	overflow-x: hidden;
+}
+
+content{
+	max-width: 90%;
+	position: relative;
+	display: block;
+	left: 25%;
+
+}
+
+h3{
+	color: orangered;
+}
+header{
+	float: left;
+	max-width: 10%;
+	position: fixed;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 25px 5%;
+	background-color: #1f1f1f;
+	margin: 0px;
+	font-weight: 600;
+	font-size: 30px;
+	margin-right: 5px;
+	text-align: center;
+	
+	top:0px;
+	left: 0px;
+	overflow-y: auto;
+}
+
+.nav-bar{
+	display: flex;
+	flex-direction: column;
+}
+.nav-bar div, a, h3{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.logo{
+	color: orangered;
+}
+
+.nav-bar a{
+	text-decoration: none;
+	color: orangered;
+}
+
+.nav-bar a:visited{
+	text-decoration: none;
+	color: orangered;
+}
+::-webkit-scrollbar {
+	width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #282828;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #F56105;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #f58d05;
+  }
+
+  .welcome_user{
+  	color: orangered;
+  }
+
+  script{
+  	color: transparent;
+  }

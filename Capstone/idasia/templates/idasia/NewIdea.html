@@ -1,0 +1,85 @@
+{% extends "idasia/layout.html" %}
+{% load static %}
+{% block body %}
+{% block css %}
+	<link rel="stylesheet" href="{% static 'idasia/newidea.css' %}">
+{% endblock %}
+<div class="new-idea">
+<h1>New Idea</h1>
+	<form action="{% url 'newidea'%}" method="POST">
+		{% csrf_token %}
+		<div class="author">
+			<label>Project Author: </label><input name="proj_author" value="{{ user }}">
+		</div>
+		<div class="proj-title">
+			<label>Project Title</label>
+			<input name="proj_title">
+		</div>
+		<div class="proj-title">
+			<label>Categories</label>
+			{% for cat in categories %}
+				<label class="container">{{ cat.category_name }}
+				  <input type="checkbox" name="category" value="{{ cat.category_name}}" class="checkb"">
+				  <span class="checkmark"></span>
+				</label>
+			{% endfor %}
+		</div>
+		<div class="proj-title">
+			<label>Project staus</label>
+			<select name="proj_status">
+				<option value="Active">Active</option>
+				<option value="Planning">Planning</option>
+				<option value="On Hold">On Hold</option>
+			</select>
+		</div>
+		<div class="proj-title">
+			<label>Image link</label>
+			<p>We are using link for images temporarily</p>
+			<input name="proj_image">
+		</div>
+		<div class="proj-title">
+			<label>Project Location</label>
+			<select name="proj_location" id="selectCountries">
+				<option>Choose Country</option>
+			</select>
+		</div>
+		<div class="proj-title">
+			<label>Project Description</label>
+			
+			<textarea name="proj_content"></textarea>
+		</div>
+		<div class="proj-title">
+			<label>Project Objective</label>
+			<input name="proj_objective">
+		</div>
+		<div class="proj-title">
+			<label>Project cost: </label>
+			<div style="display: flex;">
+				<label>$</label><input name="proj_cost" value="0" required>
+			</div>
+		</div>
+		<label>Project History</label>
+		<p>What is the reason behind this idea?</p>
+			<textarea name="proj_background"></textarea>
+		<input type="submit" name="submit">
+		</div>
+	</form>
+
+</div>
+
+<script>
+	function showCountries(countries){
+		countries.sort(({ name: { common: a } }, { name: { common: b } }) => a.localeCompare(b))
+		countries.forEach(country => {
+			const option = document.createElement("option");
+			option.text = country.name.common;
+			console.log(country.name.common)
+			option.value = country.name.common;
+			document.getElementById("selectCountries").appendChild(option);
+		});
+	}
+	fetch("https://restcountries.com/v3.1/all?sort=name")
+	.then(response=>response.json())
+	.then(data=>showCountries(data));
+</script>
+{% endblock %}

@@ -1,0 +1,101 @@
+body{
+  overflow-x: hidden;
+  position: relative;
+  left: -10%;
+}
+h2{
+	color: white;
+}
+form{
+	display: block;
+	background-color: #262626;
+	border-radius: 10px;
+	padding: 10px;
+	padding-top: 25px;
+	width: 40%;	
+	padding-bottom: 25px;
+}
+input, textarea, select{
+	font-size: 22px;
+	background-color: transparent;
+	color: white;
+	border: none;
+
+}
+textarea{
+	resize: none;
+}
+option{
+	background-color: #262626;
+	color: white;
+}
+
+
+/* Style inputs */
+input[type=text], select {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-bottom: 2px solid white;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-bottom: 2px solid white;
+  box-sizing: border-box;
+}
+input[type=number], select {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-bottom: 2px solid white;
+  box-sizing: border-box;
+}
+textarea, select {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-bottom: 2px solid white;
+  box-sizing: border-box;
+}
+/* Style the submit button */
+input[type=submit] {
+  width: 90%;
+  background-color: orangered;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add a background color to the submit button on mouse-over */
+input[type=submit]:hover {
+  background-color: darkorange;
+  color: white;
+}
+
+*:focus{
+	outline: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}

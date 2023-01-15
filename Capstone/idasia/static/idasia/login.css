@@ -1,0 +1,92 @@
+body{
+	text-align: center;
+	align-content: center;
+}
+
+
+header{
+	top: 0px;
+}
+content{
+	position: relatives;
+	overflow-x: hidden;
+	left: 15%;
+
+}
+.login-page{
+	position: relative;	
+	top: 100px;
+	height: 100%;
+}
+.form-control{
+	font-size: 24px;
+	background-color: transparent;
+	color: white;
+	margin: 15px;
+	padding: 5px;
+}
+.login_b{
+	font-size: 24px;
+	border-radius: 5px;
+	background-color: orangered;
+	color: black;
+	border: none;
+	padding: 10px;
+}
+.login_b:hover{
+	background-color: darkorange;
+	color: white;
+
+}
+*:focus{
+	outline: none;
+}
+input{
+  border: none;
+  border-bottom: 2px solid white;
+}
+h3{
+	color:whitesmoke;
+	text-decoration: none;
+}
+h2{
+	color:whitesmoke;
+	text-decoration: none;
+	font-size: 32px;
+}
+.register_button{
+	font-size: 24px;
+}
+.register_button a{
+	text-decoration: none;
+	color: orangered;
+	font-weight: bold;
+	font-size: 24px;
+}
+.register_button a:visited{
+	text-decoration: none;
+	color: orangered;
+	font-weight: bold;
+	font-size: 24px;
+}
+.register_button a:hover{
+	color: darkorange;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
+.message{
+	color: red;
+}
+
+

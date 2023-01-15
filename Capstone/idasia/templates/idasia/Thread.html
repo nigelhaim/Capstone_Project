@@ -1,0 +1,28 @@
+{% extends "idasia/layout.html" %}
+{% load static %}
+{% block body %}
+	{% block css %}
+		<link rel="stylesheet" href="{% static 'idasia/thread.css' %}">
+	{% endblock %}
+	<h1>{{ thread.content }}</h1>
+	<h5>By: {{ thread.profile.user.username  }}</h5>
+	<div id="thread-files">
+	</div>
+	
+	<div id="reply_div">
+		<h3>Chat on this thread</h3>
+		<form action="{% url 'seeThread' thread.id %}" method="POST">
+			<input name="reply" id="reply">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+
+	<div id="see-thread-replies"></div>
+{% block script %}
+     <script id ="thread_id" type="application/json" style="display: none;">
+        {"thread_id" : {{ thread.id }}}
+    </script> 
+    <script src="{% static 'idasia/thread.js' %}" style="display: none;">
+    </script>
+{% endblock %}
+{% endblock %}

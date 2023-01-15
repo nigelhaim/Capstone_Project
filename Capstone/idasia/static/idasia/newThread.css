@@ -1,0 +1,40 @@
+
+
+#submit_thread{
+	width: 200px;
+}
+
+input[type="file"]{
+	border: none;
+	margin: 20px;
+	margin-left: 0px;
+}
+
+h1, h2{
+	color: orangered;
+}
+
+#submit_thread{
+	background-color: orangered;
+	color: black;
+	border: none;
+	padding: 8px;
+	border-radius: 5px; 
+	margin-top: 10px;
+}
+
+input, textarea, select{
+	background-color: transparent;
+	color: white;
+	border: none;
+	border-bottom: 5px solid white;
+	outline: none;
+	font-size: 21px;
+	width: 300px;
+
+}
+
+#form_username, #form_date{
+	border: none;
+}
+

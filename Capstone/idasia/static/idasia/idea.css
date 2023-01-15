@@ -1,0 +1,71 @@
+
+.head{
+	position: relative;
+}
+#show-ideas{
+	position: relative;
+	max-swidth: 80%;
+	width: 80%;
+
+}
+#idea_div{
+	color: orangered;
+	border: 5px solid orangered;
+	border-radius: 10px;
+	width: 85%;
+	padding: 20px;
+	margin: 20px;
+	margin-left: 0px;
+	margin-bottom: 100px;
+	float: left;
+}
+
+.idea_title{
+	color: orangered;
+}
+.idea_image{
+	width: auto;
+	height: 300px;
+}
+.title-div{
+	display: flex;
+	align-content: center;
+}
+.location_flag{
+	width: 30px;
+	height: 15px;
+}
+
+.head{
+	color: orangered;
+}
+
+.select-categories{
+	display: flex;
+}
+
+
+label, option, select{
+	font-size: 21px;
+}
+
+option{
+	color: orangered;
+	background-color: black;
+	padding: 10px;
+	border-radius: 5px;
+}
+select{
+	background-color: transparent;
+	padding: 10px;
+	border-radius: 5px;
+	color: white;
+	border:none;
+	position: relative;
+	top: -10px;
+}
+
+label{
+	color: orangered;
+	font-weight: 600;
+}
