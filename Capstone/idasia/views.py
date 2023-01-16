@@ -98,7 +98,7 @@ def show_idea(request, post_id):
 		"collaboratos" : show_idea.proj_collaborator.all(),
 		"status" : show_idea.proj_status,
 		})
-
+@login_required
 def close(request, idea_id):
 	categories = category.objects.all()
 	idea.objects.filter(pk=idea_id).update(proj_status = "Closed")
@@ -110,13 +110,14 @@ def get_thread(request, thread_id):
 def get_file(request, file_id):
 	f = proj_files.objects.get(pk = file_id)
 	return JsonResponse([f.serialize()], safe=False)
-
+@login_required
 def edit_description(request, post_id):
 	if request.method == "POST":
 		js = json.loads(request.body)
 		new_description = js['description']
 		idea.objects.filter(pk=post_id).update(proj_content = new_description)
 		return JsonResponse({"result" : True}, status = 200)
+
 def parse_idea(request, post_id):
 	show_idea = idea.objects.get(pk=post_id)
 	return JsonResponse([show_idea.serialize()], safe=False,)

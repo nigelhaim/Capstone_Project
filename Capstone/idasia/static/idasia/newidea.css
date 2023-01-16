@@ -5,10 +5,11 @@ body{
 }
 .new-idea{
 	float: left;
-	position: inherit;
+	position: relative;
 	margin: 5px;
-	width: 250%;
+	width: 100%;
 	font-size: 18px;
+  left:250px;
 }
 h1{
 	color:orangered;
@@ -137,4 +138,26 @@ p{
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+	#proj_author{
+		float: left;
+		width: 50%;
+		left: 0px;
+	}
+
+@media only screen and (max-width: 910px){
+	.new-idea{
+		position: relative;
+		left: 5px;
+	}
+	#proj_cost{
+		float: left;
+		width: 250%;
+		left: -25%;
+	}
+	#proj_author{
+		float: left;
+		width: 150%;
+		left: -5%;
+	}
 }

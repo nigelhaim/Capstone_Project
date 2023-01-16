@@ -20,27 +20,6 @@ content{
 h3{
 	color: orangered;
 }
-header{
-	float: left;
-	max-width: 10%;
-	position: fixed;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	padding: 25px 5%;
-	background-color: #1f1f1f;
-	margin: 0px;
-	font-weight: 600;
-	font-size: 30px;
-	margin-right: 5px;
-	text-align: center;
-	
-	top:0px;
-	left: 0px;
-	overflow-y: auto;
-}
 
 .nav-bar{
 	display: flex;
@@ -63,6 +42,7 @@ header{
 	text-decoration: none;
 	color: orangered;
 }
+
 ::-webkit-scrollbar {
 	width: 10px;
   }
@@ -87,5 +67,146 @@ header{
   }
 
   script{
-  	color: transparent;
+  	display: none;
   }
+header{
+	float: left;
+	max-width: 10%;
+	position: fixed;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 25px 5%;
+	background-color: #1f1f1f;
+	margin: 0px;
+	font-weight: 600;
+	font-size: 30px;
+	margin-right: 5px;
+	text-align: center;
+	
+	top:0px;
+	left: 0px;
+	overflow-y: auto;
+}
+
+.nav-toggle .bar {
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
+  background: #fff;
+  float: left;
+  z-index: 1;
+  position: fixed;
+} 
+
+.nav-toggle{
+  display: none;
+  cursor: pointer;
+}
+  
+.nav-toggle:hover {
+  cursor: pointer;
+} 
+body{
+	display: block;
+}
+.navigation{
+	display: block;
+}
+.navigation.active{
+	display: block;
+}
+content{
+	margin-top: 0px;
+	position: relative;
+	top: 0px;
+	z-index: 0;
+}
+.nav-toggle{
+	background-color: transparent;
+	font-size: 50px;
+	padding: 10px;
+	font-weight: 900;
+	border: 10px solid orangered;
+	color: white;
+	border-radius: 20px;
+}
+
+.nav-toggle.is-active{
+	background-color: orangered;
+	font-size: 50px;
+	padding: 10px;
+	font-weight: 900;
+	color: black;
+	border-radius: 20px;
+
+}
+
+@media only screen and (max-width: 1200px){
+	*{
+		position: relative;
+		left: -3px;
+		top:-10px;
+		width: 100%;
+	}
+	.nav-bar{
+		display: flex;
+	}
+	header{
+		float: none;
+		max-width:100%;
+		position: relative;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 25px 5%;
+		background-color: #1f1f1f;
+		margin: 0px;
+		font-weight: 600;
+		font-size: 30px;
+		margin-right: 5px;
+		text-align: center;
+		
+		top:0px;
+		left: -5%;
+		overflow-y: auto;
+	}
+	content{
+		max-width: 100%;
+		position: relative;
+		display: block;
+		left: 10px;
+	}
+	.navigation{
+		display: block;
+	}
+	.nav-toggle{
+	  display: block;
+	  cursor: pointer;
+	  width: 100%;
+	}
+	  
+	.nav-toggle:hover {
+	  cursor: pointer;
+	} 
+	body{
+		display: block;
+	}
+	.navigation{
+		display: none;
+	}
+	.navigation.active{
+		display: block;
+	}
+	content{
+		margin-top: 0px;
+		position: relative;
+		top: 0px;
+		z-index: 0;
+	}
+}

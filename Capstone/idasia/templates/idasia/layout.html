@@ -1,4 +1,4 @@
-x{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,22 +7,27 @@ x{% load static %}
 	<link rel="stylesheet" href="{% static 'idasia/styles.css' %}">
 	<link rel="stylesheet" href="{% static 'idasia/idea.css' %}">
 
-	<title>{% block title %}idasia{% endblock %}</title>
+	<title>Idasia</title>
 </head>
 <body>
-	<header>
+	<button class="nav-toggle" id="mobile-menu">
+		Menu
+	</button>
+	<header id="navigation" class="navigation">
 		<nav class="nav-bar">
 		<div class="logo">IDASIA</div>
 				{% if user.is_authenticated %}
-				<h3>
+				<a href="{% url 'view_profile' user.id %}">
 					{{ user.username }}
-				</h3>
+				</a>
 				{% endif %}
 				<!-- TODO: A button to show all ideas, categories -->	
+				{% if user.is_authenticated %}
 				<a href="{% url 'newidea' %}">Create Project</a>
 				<a href="{% url 'index' %}">All ideas</a>
 				<a href="{% url 'joined' %}">Joined Projects</a>
 				<a href="{% url 'projects' %}">My Projects</a>
+				{% endif %}
 				<a href="{% url 'aboutus' %}">About Us</a>
 				{% if user.is_authenticated %}
 				<a class="nav-link" href="{% url 'logout' %}"> Log out</a>
@@ -36,5 +41,7 @@ x{% load static %}
 		{% block body %}
 		{% endblock %}
 	</content>
+	    <script src="{% static 'idasia/nav.js' %}" style="display: none;">
+	    </script>
 </body>
 </html>

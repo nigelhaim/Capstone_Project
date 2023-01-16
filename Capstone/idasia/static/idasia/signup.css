@@ -99,3 +99,10 @@ input[type=submit]:hover {
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: white;
 }
+
+@media only screen and (max-width: 910px){
+  content{
+    position: relative;
+    top: 30px;
+  }
+}

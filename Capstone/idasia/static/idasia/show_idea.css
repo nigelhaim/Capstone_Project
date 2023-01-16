@@ -13,8 +13,8 @@ h4{
 	top:10px;
 }
 img{
-	max-width: 600px;
-	max-height: 350px;
+	max-width: 400px;
+	max-height: auto;
 	border-right: 5px solid white;
 	padding-right: 50px;
 	margin-right: 25px;
@@ -260,4 +260,52 @@ option{
 	padding: 5px;
 	border-radius: 5px;
 	border: 5px solid darkred;
+}
+
+
+@media only screen and (max-width: 1200px){
+	*{
+		position: relative;
+		left: -3px;
+		top:-10px;
+		width: 100%;
+	}
+	content{
+		display: block;
+		padding: 10px;
+	}
+	#collaborator_list{
+		right: 0px;
+		background-color: transparent;
+		float: right;
+		position: relative;
+		height:auto;
+		top:-20%;
+		width: 100%;
+		padding: 20px;
+	}
+	.idea_header{
+		display: block;
+	}
+	img{
+		max-width: 400px;
+		max-height: auto;
+		border-right: none;
+		padding-right: 50px;
+		margin-right: 25px;
+	}
+	.categories{
+		display: block;
+	}
+	.line{
+		display: none;
+	}
+	.idea_title{
+		display: block;
+		padding-top: 20px;
+	}
+	.idea_content{
+		width: 80%;
+		margin-bottom: 0px;
+	}
 }

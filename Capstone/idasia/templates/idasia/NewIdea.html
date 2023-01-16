@@ -9,7 +9,7 @@
 	<form action="{% url 'newidea'%}" method="POST">
 		{% csrf_token %}
 		<div class="author">
-			<label>Project Author: </label><input name="proj_author" value="{{ user }}">
+			<label>Project Author: </label><input id="proj_author" name="proj_author" value="{{ user }}">
 		</div>
 		<div class="proj-title">
 			<label>Project Title</label>
@@ -54,8 +54,8 @@
 		</div>
 		<div class="proj-title">
 			<label>Project cost: </label>
-			<div style="display: flex;">
-				<label>$</label><input name="proj_cost" value="0" required>
+			<div style="display: flex; position: relative;">
+				<label>$</label><input id = "proj_cost" name="proj_cost" value="0" required>
 			</div>
 		</div>
 		<label>Project History</label>
